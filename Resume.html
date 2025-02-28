@@ -56,27 +56,21 @@
             text-align: center;
         }
 
-        /* Small Resume Window */
-        .resume-container {
-            width: 50%;
-            max-width: 400px;
-            height: 500px;
-            margin: 20px auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border: 2px solid #003366;
+        /* Small, sleek preview */
+        .resume-thumbnail {
+            width: 150px;
+            height: 200px;
+            background-image: url('resume-thumbnail.png'); /* Use an actual thumbnail preview image */
+            background-size: cover;
+            background-position: center;
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 30px auto;
+            display: block;
+            transition: transform 0.3s ease;
         }
 
-        .resume-container:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-        }
-
-        .resume-embed {
-            width: 100%;
-            height: 100%;
-            border: none;
+        .resume-thumbnail:hover {
+            transform: scale(1.1);
         }
 
         /* Modal Styling */
@@ -140,10 +134,8 @@
 
 <h1><u>My Resume</u></h1>
 
-<!-- Small Resume Window (Clickable for Enlarged View) -->
-<div class="resume-container" onclick="openModal()">
-    <iframe src="Resume.pdf" class="resume-embed"></iframe>
-</div>
+<!-- Small, sleek resume preview (clickable) -->
+<div class="resume-thumbnail" onclick="openModal()"></div>
 
 <!-- Modal to enlarge the resume -->
 <div id="myModal" class="modal">
@@ -158,7 +150,7 @@
     var resumeFrame = document.getElementById("resumeFrame");
 
     function openModal() {
-        resumeFrame.src = "Resume.pdf";  // Load PDF when modal opens
+        resumeFrame.src = "Resume.pdf";  // Load PDF only when opened
         modal.style.display = "flex";
     }
 

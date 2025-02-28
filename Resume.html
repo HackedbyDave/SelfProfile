@@ -14,7 +14,8 @@
             padding: 0;
             font-family: Arial, sans-serif;
         }
-.navbar {
+
+        .navbar {
             position: sticky;
             top: 0;
             padding: 15px;
@@ -26,7 +27,7 @@
             width: 100%;
         }
 
-     .navlink li {
+        .navlink li {
             display: inline;
             color: #003366;
             padding-right: 25px;
@@ -47,20 +48,13 @@
             color: white;
             background-color: #003366;
             border-radius: 5px;
-	}
-
-        h2 {
-            font-family: 'Georgia',serif;
-	    font-size: 28px;
-	    color: #003366;
-            text-align: center;
-            margin-top: 50px;
         }
 
-	u {
-	  width: 120%;
-	
-	}
+        h1 {
+            font-family: "Great Vibes", serif;
+            color: #003366;
+            text-align: center;
+        }
 
         /* Resume Thumbnail (Mini Window) */
         .resume-thumbnail {
@@ -73,15 +67,15 @@
             cursor: pointer;
             margin: 65px auto;
             position: relative;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect for 3D look */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition effects */
-	    padding: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 8px;
         }
 
         /* Hover Effect for Thumbnail */
         .resume-thumbnail:hover {
-            transform: scale(1.05); /* Slight zoom effect on hover */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         /* Modal Styling */
@@ -105,39 +99,32 @@
             border: 2px solid #003366;
             width: 80%;
             max-width: 900px;
-            height: 80%; /* Set to 80% of viewport height */
+            height: 80%;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
         .close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
             color: #aaa;
-            float: right;
             font-size: 28px;
             font-weight: bold;
+            cursor: pointer;
         }
 
-        .close:hover,
-        .close:focus {
+        .close:hover {
             color: black;
-                   }
+        }
 
         /* Resume in Modal */
         .resume-modal {
             width: 100%;
-            height: 100%; /* Set to fill the modal content box */
-            object-fit: contain; /* Ensures it resizes while maintaining aspect ratio */
+            height: 100%;
+            border: none;
         }
-
-	
-	.hi{
-	 font-family: "Great Vibes", serif;
-	 color: #003366;
-       	 text-align: center;
-	
-	}
-	
 
     </style>
 </head>
@@ -146,47 +133,42 @@
 <nav class="navbar">
     <ul class="navlink">
         <li><a href="index.html" aria-label="Navigate to Home">Home</a></li>
-	 <li><a href="Bio.html" aria-label="Navigate to Bio">Bio</a></li>
-	 <li><a href= "Resume.html" aria-label="Navigate to Resume">Resume</a></li>
+        <li><a href="Bio.html" aria-label="Navigate to Bio">Bio</a></li>
+        <li><a href="Resume.html" aria-label="Navigate to Resume">Resume</a></li>
         <li><a href="Contact.html" aria-label="Navigate to Contact">Contact</a></li>
     </ul>
 </nav>
 
-
-<div class="hi"><h1><u>My Resume</u></h1></div>
-
+<h1><u>My Resume</u></h1>
 
 <!-- Resume Thumbnail (Mini Window) -->
-<div class="resume-thumbnail" onclick="openModal()">
-    <!-- The resume thumbnail is now clickable and has a background image -->
-</div>
+<div class="resume-thumbnail" onclick="openModal()"></div>
 
 <!-- Modal to enlarge the resume -->
 <div id="myModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
-        <iframe src="Resume.pdf" class="resume-modal" width="100%" height="100%"></iframe>
+        <iframe id="resumeFrame" class="resume-modal"></iframe>
     </div>
 </div>
 
 <script>
-    // Get the modal
     var modal = document.getElementById("myModal");
+    var resumeFrame = document.getElementById("resumeFrame");
 
-    // Function to open the modal
     function openModal() {
+        resumeFrame.src = "Resume.pdf";  // Load PDF when modal opens
         modal.style.display = "flex";
     }
 
-    // Function to close the modal
     function closeModal() {
+        resumeFrame.src = "";  // Unload PDF when modal closes
         modal.style.display = "none";
     }
 
-    // Close the modal if the user clicks outside of it
     window.onclick = function(event) {
         if (event.target == modal) {
-            modal.style.display = "none";
+            closeModal();
         }
     }
 </script>

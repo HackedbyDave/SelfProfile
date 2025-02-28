@@ -56,14 +56,21 @@
             text-align: center;
         }
 
-        /* Resume Embed */
+        /* Small Resume Window */
         .resume-container {
-            width: 80%;
-            max-width: 900px;
-            height: 100vh;
+            width: 50%;
+            max-width: 400px;
+            height: 500px;
             margin: 20px auto;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border: 2px solid #003366;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .resume-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
 
         .resume-embed {
@@ -133,13 +140,9 @@
 
 <h1><u>My Resume</u></h1>
 
-<!-- Resume Display (Visible on Load) -->
-<div class="resume-container">
+<!-- Small Resume Window (Clickable for Enlarged View) -->
+<div class="resume-container" onclick="openModal()">
     <iframe src="Resume.pdf" class="resume-embed"></iframe>
-</div>
-
-<!-- Clickable Thumbnail (Enlarges Resume in Modal) -->
-<div class="resume-thumbnail" onclick="openModal()" style="width: 200px; height: 150px; background-image: url('../Assets/resume.png'); background-size: cover; background-position: center; cursor: pointer; margin: 20px auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: 2px solid #003366;">
 </div>
 
 <!-- Modal to enlarge the resume -->

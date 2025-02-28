@@ -67,17 +67,17 @@
             margin-top: 50px;
         }
 
-         .name {
+        .name {
             font-family: "Great Vibes", serif;
             color: #003366;
-	    text-align: center;
-                   }
+            text-align: center;
+        }
 
         .contact-info .email, .contact-info .num {
             font-family: 'Georgia', serif;
             font-size: 18px;
             margin: 5px 0;
-	    color:#003366;
+            color: #003366;
         }
 
         .contact-info a {
@@ -89,6 +89,36 @@
         .contact-info a:hover {
             color: #66ccff;
         }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                text-align: center;
+            }
+
+            .navlink li {
+                display: inline-block;
+                padding: 10px;
+            }
+
+            .name h1 {
+                font-size: 24px;
+            }
+
+            .contact-info .email, .contact-info .num {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .name h1 {
+                font-size: 20px;
+            }
+
+            .contact-info .email, .contact-info .num {
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 
@@ -97,21 +127,22 @@
 <nav class="navbar">
     <ul class="navlink">
         <li><a href="index.html" aria-label="Navigate to Home">Home</a></li>
- 	<li><a href="Bio.html" aria-label="Navigate to Bio">Bio</a></li>
+        <li><a href="Bio.html" aria-label="Navigate to Bio">Bio</a></li>
         <li><a href= "Resume.html" aria-label="Navigate to Resume">Resume</a></li>
         <li><a href="Contact.html" aria-label="Navigate to Contact">Contact</a></li>
     </ul>
 </nav>
 
-    <div class="name"><h1><u>Reach me at</u></h1></div>
-    
+<div class="name">
+    <h1><u>Reach me at</u></h1>
+</div>
 
 <div class="contact-info">
-<div class="email">
+    <div class="email">
         <p>&#9993; <a href="mailto:beadlekiran@gmail.com" title="Send an email to beadlekiran@gmail.com">beadlekiran@gmail.com</a></p>
     </div>
     <div class="num">
-        <p><span aria-label="Phone number">&#9742;  (876) 357-7319</span></p>
+        <p><span aria-label="Phone number">&#9742; (876) 357-7319</span></p>
     </div>
 </div>
 

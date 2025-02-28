@@ -146,12 +146,68 @@
             background: linear-gradient(to right, #003366, #66ccff);
         }
 
-	.hi{
-	 font-family: "Great Vibes", serif;
-	 color: #003366;
-       	 text-align: center;
-	
-	}
+        .hi {
+            font-family: "Great Vibes", serif;
+            color: #003366;
+            text-align: center;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                text-align: center;
+            }
+
+            .navlink li {
+                display: inline-block;
+                padding: 10px;
+            }
+
+            .chat-container {
+                margin-top: 50px;
+                padding: 15px;
+            }
+
+            .chat-bubble {
+                font-size: 14px;
+                max-width: 90%;
+            }
+
+            .traits {
+                font-size: 20px;
+            }
+
+            .tra {
+                font-size: 14px;
+            }
+
+            .hi h1 {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .chat-container {
+                padding: 10px;
+            }
+
+            .chat-bubble {
+                font-size: 13px;
+                max-width: 95%;
+            }
+
+            .traits {
+                font-size: 18px;
+            }
+
+            .tra {
+                font-size: 12px;
+            }
+
+            .hi h1 {
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 
@@ -160,7 +216,7 @@
 <nav class="navbar">
     <ul class="navlink">
         <li><a href="index.html" aria-label="Navigate to Home">Home</a></li>
-	 <li><a href="Bio.html" aria-label="Navigate to Bio">Bio</a></li>
+        <li><a href="Bio.html" aria-label="Navigate to Bio">Bio</a></li>
         <li><a href= "Resume.html" aria-label="Navigate to Resume">Resume</a></li>
         <li><a href="Contact.html" aria-label="Navigate to Contact">Contact</a></li>
     </ul>
@@ -194,11 +250,10 @@
     </div>
 </div>
 
- <hr style="border: none; border-top: 1px solid #ccc;">
-    
+<hr style="border: none; border-top: 1px solid #ccc;">
 
-<div class= "hi">
-  <u><h1>My Individual Traits</h1></u>
+<div class="hi">
+    <u><h1>My Individual Traits</h1></u>
 </div>
 
 <section class="traits">
@@ -220,7 +275,6 @@
         it drives me to set clear goals and pushes me to <br>
         overcome challenges I encounter along the way. <br>
     </h3>
-
 </div>
 
 </body>

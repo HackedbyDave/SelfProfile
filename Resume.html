@@ -54,30 +54,34 @@
             font-family: "Great Vibes", serif;
             color: #003366;
             text-align: center;
+            margin-top: 50px;
         }
 
-        /* Small, sleek preview */
+        /* Resume Thumbnail (Mini Window) */
         .resume-thumbnail {
-            width: 150px;
-            height: 200px;
-            background-image: url('resume-thumbnail.png'); /* Use an actual thumbnail preview image */
+            width: 600px;
+            height: 550px;
+            background-image: url('../Assets/resume.png'); /* Use a preview image */
             background-size: cover;
             background-position: center;
             cursor: pointer;
-            margin: 30px auto;
+            margin: 65px auto;
             display: block;
-            transition: transform 0.3s ease;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .resume-thumbnail:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         /* Modal Styling */
         .modal {
             display: none;
             position: fixed;
-            z-index: 1;
+            z-index: 10;
             left: 0;
             top: 0;
             width: 100%;
@@ -88,15 +92,16 @@
         }
 
         .modal-content {
-            position: relative;
             background-color: #fff;
             border: 2px solid #003366;
-            width: 90%;
+            width: 80%;
             max-width: 900px;
-            height: 90%;
+            height: 80%;
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 20px;
+            position: relative;
         }
 
         .close {
@@ -116,7 +121,7 @@
         .resume-modal {
             width: 100%;
             height: 100%;
-            border: none;
+            object-fit: contain;
         }
 
     </style>
@@ -125,7 +130,7 @@
 
 <nav class="navbar">
     <ul class="navlink">
-        <li><a href="index.html" aria-label="Navigate to Home">Home</a></li>
+        <li><a href="Home.html" aria-label="Navigate to Home">Home</a></li>
         <li><a href="Bio.html" aria-label="Navigate to Bio">Bio</a></li>
         <li><a href="Resume.html" aria-label="Navigate to Resume">Resume</a></li>
         <li><a href="Contact.html" aria-label="Navigate to Contact">Contact</a></li>
@@ -134,23 +139,21 @@
 
 <h1><u>My Resume</u></h1>
 
-<!-- Small, sleek resume preview (clickable) -->
+<!-- Resume Thumbnail (Mini Window) -->
 <div class="resume-thumbnail" onclick="openModal()"></div>
 
-<!-- Modal to enlarge the resume -->
+<!-- Modal for enlarged resume -->
 <div id="myModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
-        <iframe id="resumeFrame" class="resume-modal"></iframe>
+        <object data="resume.pdf" class="resume-modal" type="application/pdf"></object>
     </div>
 </div>
 
 <script>
     var modal = document.getElementById("myModal");
-    var resumeFrame = document.getElementById("resumeFrame");
 
     function openModal() {
-        resumeFrame.src = "Resume.pdf";  // Load PDF only when opened
         modal.style.display = "flex";
     }
 

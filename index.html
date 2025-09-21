@@ -14,21 +14,19 @@
             font-family: Arial, sans-serif;
         }
 
-           .navbar {
+        .navbar {
             position: sticky;
             top: 0;
             padding: 15px;
-            background-color: #F8F6FF;
-            text-align: right;
             background: rgba(255, 255, 255, 0.95);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             z-index: 1000;
             width: 100%;
+            text-align: right;
         }
 
-     .navlink li {
+        .navlink li {
             display: inline;
-            color: #003366;
             padding-right: 25px;
         }
 
@@ -47,42 +45,70 @@
             color: white;
             background-color: #003366;
             border-radius: 5px;
-	}
-
-        img {
-            margin: 0px 885px 0px; /* Keeps the image at its current location */
-            display: block;
-            max-width: 100%;
-            height: auto;
-        }
-
-        h1 {
-            color: #003366;
-        }
-
-        .quote {
-            font-family: 'Georgia', serif;
-            font-size: 38px;
-            font-weight: bold;
-            color: #003366;
-            text-align: center;
-            margin: -500px 90px 550px;
-            position: relative;
-            width: 40%;
-            max-width: 60%;
-        }
-
-        .name {
-            font-family: "Great Vibes", serif;
-            font-size: 25px;
-            color: #003366;
-            margin-left: 1050px;
         }
 
         .hi {
             font-family: "Great Vibes", serif;
             color: #003366;
             text-align: center;
+            margin-top: 30px;
+        }
+
+        /* Flex container for image + text */
+        .intro-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px auto;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .intro-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .name {
+            font-family: "Great Vibes", serif;
+            font-size: 25px;
+            color: #003366;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .quote {
+            font-family: 'Georgia', serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #003366;
+            text-align: center;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+
+        /* Responsive tweaks */
+        @media (min-width: 768px) {
+            .intro-section {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                text-align: left;
+                gap: 40px;
+            }
+
+            .quote {
+                font-size: 28px;
+                max-width: 400px;
+            }
+
+            .name {
+				margin: 20px;
+                font-size: 28px;
+                margin-top: 10px;
+                text-align: left;
+            }
         }
     </style>
 </head>
@@ -102,19 +128,22 @@
     <h1>&#128075; Welcome to my Website Portfolio</h1>
 </div>
 
-<img src="Kiran.jpg" alt="Image Here" width="550px" height="665px">
-
-<div class="name">
-    <h3>Kiran Beadle-Njaka, 22</h3>
-</div>
-
-<div class="quote">
-    <p>
-        "With no confidence in self,<br>
-        you are twice defeated in<br>
-        the race of life."
-    </p>
+<!-- Intro section with flex -->
+<div class="intro-section">
+    <img src="Kiran.jpg" alt="Profile picture" width="300px">
+    <div>
+        <div class="name">
+            <h3>Kiran Beadle-Njaka, 22</h3>
+        </div>
+        <div class="quote">
+            <p>
+                "With no confidence in self,<br>
+                you are twice defeated in<br>
+                the race of life."
+            </p>
+        </div>
+    </div>
 </div>
 
 </body>
-</html> 
+</html>

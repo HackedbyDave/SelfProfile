@@ -20,3 +20,129 @@
             padding: 15px;
             background: rgba(255, 255, 255, 0.95);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            width: 100%;
+            text-align: right;
+        }
+
+        .navlink li {
+            display: inline;
+            padding-right: 25px;
+        }
+
+        .navlink a {
+            text-decoration: none;
+            font-family: "Montserrat", sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: #003366;
+            padding: 8px 12px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .navlink a:hover {
+            color: white;
+            background-color: #003366;
+            border-radius: 5px;
+        }
+
+        .hi {
+            font-family: "Great Vibes", serif;
+            color: #003366;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        /* Flex container for image + text */
+        .intro-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px auto;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .intro-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .name {
+            font-family: "Great Vibes", serif;
+            font-size: 25px;
+            color: #003366;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .quote {
+            font-family: 'Georgia', serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #003366;
+            text-align: center;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+
+        /* Responsive tweaks */
+        @media (min-width: 768px) {
+            .intro-section {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                text-align: left;
+                gap: 40px;
+            }
+
+            .quote {
+                font-size: 28px;
+                max-width: 400px;
+            }
+
+            .name {
+                font-size: 28px;
+                margin-top: 10px;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <ul class="navlink">
+        <li><a href="index.html" aria-label="Navigate to Home">Home</a></li>
+        <li><a href="Bio.html" aria-label="Navigate to Bio">Bio</a></li>
+        <li><a href="Resume.html" aria-label="Navigate to Resume">Resume</a></li>
+        <li><a href="Contact.html" aria-label="Navigate to Contact">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="hi">
+    <h1>&#128075; Welcome to my Website Portfolio</h1>
+</div>
+
+<!-- Intro section with flex -->
+<div class="intro-section">
+    <img src="Kiran.jpg" alt="Profile picture" width="300px">
+    <div>
+        <div class="name">
+            <h3>Kiran Beadle-Njaka, 22</h3>
+        </div>
+        <div class="quote">
+            <p>
+                "With no confidence in self,<br>
+                you are twice defeated in<br>
+                the race of life."
+            </p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
